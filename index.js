@@ -32,7 +32,7 @@ const displayPhones = (phones, isShowAll) => {
                 <p class="text-center font-semibold">There are many variations of passages of <br> available, but the majority have suffered</p>
                 <p class="text-center font-bold text-2xl">$999</p>
                 <div>
-                    <button onclick="" class="btn bg-[#0D6EFD] text-white ">Show Details</button>
+                    <button onclick="(loadDetails('${item.slug}'))" class="btn bg-[#0D6EFD] text-white ">Show Details</button>
                   </div>
                   
 
@@ -59,17 +59,38 @@ const handleShowAll = ()=>{
 }
 
 // show details 
-const loadDetails = async () => {
-    const uri = ``;
+const loadDetails = async(id) => {
+    const uri = `https://openapi.programming-hero.com/api/phone/${id}`;
     const res = await fetch(uri);
     const data = await res.json();
-    displayDetails(data.video);
+    const phone = data.data 
+    displayDetails(phone);
+    
   };
   
-  const displayDetails = () => {
-    
+  const displayDetails = (phone) => {
 
-  
+    const displayDetailsContainner = document.getElementById('modal-content');
 
-    document.getElementById('customModal').showModal();
+    displayDetailsContainner.innerHTML = ` 
+    <div>
+  <div class="flex justify-center items-center p-4 bg-[#0D6EFD0D] rounded-md mb-2">
+    <img src="${phone.image}" alt="">
+  </div>
+  <p class="text-xl font-bold">${phone.name}</p>
+  <div class="space-y-3">
+    <p> Storage: ${phone.mainFeatures.storage} </p>
+    <p>Display Size: ${phone.mainFeatures.displaySize} </p>
+    <p>Chipset: ${phone.mainFeatures.chipSet}</p>
+    <p>Memory: ${phone.mainFeatures.memory}</p>
+    <p>Slug: ${phone.slug}</p>
+    <p>Release Date: ${phone.releaseDate}</p>
+    <p>Brand: ${phone.brand}</p>
+    <p>GPS: ${phone.others.GPS}</p>
+  </div>
+</div>
+    `
+    my_modal_5.showModal();
+
+    // document.getElementById('customModal').showModal();
   };
