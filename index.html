@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.11/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phone Hunter</title>
+    <style>
+      #spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+
+      /* Spinner animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-[#0D6EFD0D] pb-44 ">
+        <nav class="w-11/12 mx-auto flex justify-between items-center py-3">
+            <p class="text-2xl font-bold">Hot Gadgets</p>
+            <button class="btn bg-[#0D6EFD] text-white">Sign Up</button>
+        </nav>
+        <div class="flex flex-col justify-center items-center mt-7 p-4 space-y-5 w-11/12  
+        md:w-1/2 mx-auto">
+            <h1 class=" text-xl lg:text-4xl font-bold">Apple Iphone 13 Pro Max</h1>
+            <p class=" px-3 md:px-0 text-center">Enjoy unmatched performance and breathtaking visuals with the Apple iPhone 13 Pro Max. Powered by the cutting-edge A15 Bionic chip and an enhanced camera system,<br> it's the perfect device for capturing and sharing your world.</p>
+            <div>
+                <button class="btn bg-[#0D6EFD] text-white" ">Buy Now</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="w-2/3 mx-auto flex justify-center items-center relative -top-32 md:-top-40">
+            <div><img src="./assets/pic1.png" alt=""></div>
+            <div><img src="./assets/pic2.png" alt=""></div>
+            <div><img src="./assets/pic3.png" alt=""></div>
+        </div>
+
+        <div class="w-3/4 mx-auto flex flex-col justify-center items-center space-y-3">
+            <p class="text-2xl font-semibold">Search your phone</p>
+            <div class="flex space-x-3">
+                <label class="input input-bordered flex items-center gap-2 md:w-96 ">
+                    <input type="text" class="grow" placeholder="Search Your Phone" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="h-4 w-4 opacity-70">
+                      <path
+                        fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </label>
+                  <div>
+                    <button onclick="handleSearch()" class="btn bg-[#0D6EFD] text-white "> Search</button>
+                  </div>
+
+                  
+
+            </div>
+        </div>
+
+        <div id="spinner"></div>
+
+        <div id="phoneCards" class=" mt-10 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <!-- <div class="border p-4 flex flex-col justify-start items-center space-y-4 rounded-lg">
+                <div class="p-7 bg-[#0D6EFD0D]">
+                    <img src="./assets/apple-iphone-13-mini.jpg" alt="">
+                </div>
+                <h3 class="text-xl font-semibold">Iphone 13 Pro Max</h3>
+                <p class="text-center font-semibold">There are many variations of passages of <br> available, but the majority have suffered</p>
+                <p class="text-center font-bold text-2xl">$999</p>
+                <div>
+                    <button onclick="" class="btn bg-[#0D6EFD] text-white ">Show Details</button>
+                  </div> -->
+
+            </div>
+
+        </div>
+
+        <div id="show-all-button-container" onclick="handleShowAll()" class="text-center mt-10 ">
+            <button class="btn bg-[#0D6EFD] text-white ">
+                Show More
+            </button>
+        </div>
+
+
+
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
