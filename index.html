@@ -60,7 +60,7 @@
             <p class="text-2xl font-semibold">Search your phone</p>
             <div class="flex space-x-3">
                 <label class="input input-bordered flex items-center gap-2 md:w-96 ">
-                    <input type="text" class="grow" placeholder="Search Your Phone" />
+                    <input id="search-input" type="text" class="grow" placeholder="Search Your Phone" />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
@@ -73,7 +73,7 @@
                     </svg>
                   </label>
                   <div>
-                    <button onclick="handleSearch()" class="btn bg-[#0D6EFD] text-white "> Search</button>
+                    <button id="search-btn" onclick="handleSearch()" class="btn bg-[#0D6EFD] text-white "> Search</button>
                   </div>
 
                   
@@ -100,8 +100,8 @@
 
         </div>
 
-        <div id="show-all-button-container" onclick="handleShowAll()" class="text-center mt-10 ">
-            <button class="btn bg-[#0D6EFD] text-white ">
+        <div id="show-all-button-container"  class="text-center mt-10 ">
+            <button id="show-more-btn" onclick="handleShowAll()" class="btn bg-[#0D6EFD] text-white ">
                 Show More
             </button>
         </div>
@@ -122,7 +122,7 @@
   </div>
 </dialog>
 
-       <div class="hidden w-11/12 mx-auto flex justify-center items-center">
+       <div id="no-item" class="hidden w-11/12 mx-auto flex justify-center items-center">
         <div class="w-1/2">
           <img class="rounded-lg" src="./assets/no found image.jpg" alt="">
        </div>
