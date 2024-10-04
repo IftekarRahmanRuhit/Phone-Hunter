@@ -34,7 +34,7 @@ const displayPhones = (phones, isShowAll) => {
         document.getElementById('show-all-button-container').classList.remove('hidden')
     }
     else{
-        showPhone= showPhone.slice(7);
+        showPhone= showPhone
         document.getElementById('show-all-button-container').classList.add('hidden')
     }
 
